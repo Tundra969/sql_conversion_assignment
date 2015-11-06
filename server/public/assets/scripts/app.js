@@ -41,6 +41,7 @@ function addSomeone(){
       data: values,
       success: function(data){
          getData();
+         updateDOM()
       }
    });
 }
@@ -55,8 +56,8 @@ function deletePerson(){
       url: "/data",
       data: deletedId,
       success: function(data){
-
          getData();
+         updateDOM()
       }
    })
 }
@@ -68,6 +69,9 @@ function updateDOM(data){
       var el = "<div class='well col-md-3'>" +
                   "<p>" + data[i].name + "</p>" +
                   "<p>" + data[i].location + "</p>" +
+                  "<p>" + data[i].age + "</p>" +
+                  "<p>" + data[i].spiritanimal + "</p>" +
+                  "<p>" + data[i].address + "</p>" +
                   "<button class='delete btn btn-danger' data-id='" +
                      data[i]._id + "'>Delete</button>" +
                "</div>";
